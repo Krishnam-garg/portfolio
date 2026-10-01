@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishnam</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css" integrity="sha512-XcIsjKMcuVe0Ucj/xgIXQnytNwBttJbNjltBV18IOnru2lDPe9KRRyvCXw6Y5H415vbBLRm8+q6fmLUU7DfO6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="sidepannel">
+        <div class="logo"><a href="#home"><i class="ri-home-2-fill"></i> Home</a></div>
+        <div class="nav-buts">
+            <div class="nav-but" ><a href="#about"><i class="ri-contacts-fill"></i> About</a></div>
+            <div class="nav-but" ><a href="#work"><i class="ri-layout-masonry-fill"></i> Work</a></div>
+            <div class="nav-but" ><a href="#contact"><i class="ri-mail-fill"></i>Contact</a></div>
+        </div>
+    </div>
+
+    <div class="main">
+    
+        
+        <div class="page" id="home">
+            <div class="name">Krishnam Garg</div>
+            <p id="typewriter" class="typewriter-text"></p>
+            <a href="#work"><div class="view-but">View Work<i class="ri-arrow-right-up-fill"></i></div></a>
+        </div>
+        <div class="page" id="about">
+    <!-- ABOUT SECTION -->
+    <div class="page" id="about">
+        <div class="title">About Me</div>
+        <div class="txt about-text">
+            <p>I’m <strong>Krishnam Garg</strong>, a Computer Science student at Bennett University with a strong interest in software development, problem-solving, and emerging technologies. I work primarily with Python, Java, JavaScript, SQL, and web technologies, and have hands-on experience building projects involving automation, computer vision, and data processing. My background in competitive coding and technology-focused projects has helped me develop a practical approach to understanding problems and turning ideas into working solutions</p>
+            <p>I’m currently focused on strengthening my foundations in software engineering, data structures and algorithms, and application development while exploring areas such as AI and automation. I enjoy learning by building, experimenting with new technologies, and working on projects that challenge me to go beyond what I already know. My goal is to continuously grow as a developer and create technology that is practical, reliable, and meaningful.</p>
+            
+            <p class="motto">Build. Learn. Experiment. Repeat.</p>
+        </div>
+        
+        <div class="boxx">
+            <div class="skilltile">Python | Java</div>
+            <div class="skilltile">Web Dev</div>
+            <div class="skilltile">SQL</div>
+            <div class="skilltile">Data Science</div>
+            <div class="skilltile">OpenCV</div>
+            <div class="skilltile">Mediapipe</div>
+
+        </div>
+    </div>
+
+    <!-- WORK SECTION -->
+    <div class="page" id="work">
+        <div class="title">My Work</div>
+        <div class="container">
+
+            <div class="tile project-btn" 
+                data-title="KRISH Virtual Assistant" 
+                data-desc="Engineered a custom Virtual Assistant project leveraging Audio and Video Processing. Capable of handeling tasks, Web Browsing, Application controll, and Voice chat." 
+                data-tech="Python, OpenCV, Speech Recognition, PyAutoGUI, Media Pipe">
+                <h3>KRISH Assistant</h3>
+                <span class="tap-hint">Tap for details <i class="ri-arrow-right-up-line"></i></span>
+            </div>
+
+            <div class="tile project-btn" 
+                data-title="SoundScape (in progress)" 
+                data-desc="An interactive Noise Heat Map application, to display noise leves in campus at different times of the day. Helps identify the problems caused by Noise Pollution and how it can be tackeled." 
+                data-tech="Python, Pandas, Folium, GeoJSON">
+                <h3>SoundScape</h3>
+                <span class="tap-hint">Tap for details <i class="ri-arrow-right-up-line"></i></span>
+            </div>
+
+            <div class="tile project-btn" 
+                data-title="BPSMUN'25 Portal" 
+                data-desc="Served as Director of IT and Design. Built the digital infrastructure, Website, and Registration Portal to seamlessly onboard over more than 200 delegates." 
+                data-tech="Web Dev, IT Infrastructure, Design">
+                <h3>BPSMUN '25</h3>
+                <span class="tap-hint">Tap for details <i class="ri-arrow-right-up-line"></i></span>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <div class="page" id="contact">
+        <div class="title">Get in Touch</div>
+        <div class="contact-container">
+            <p class="contact-text">Whether it's a hackathon team-up, a debate, or a new software project, I'm always open to collaborating. Drop a message!</p>
+            
+            <div class="contact-links">
+                <a href="mailto:krishnamgarg75@gmail.com" class="view-but contact-btn">
+                    <i class="ri-mail-send-line"></i> Email
+                </a>
+                <a href="https://github.com/Krishnam-garg" target="_blank" class="view-but contact-btn">
+                    <i class="ri-github-fill"></i> GitHub
+                </a>
+                <a href="https://linkedin.com/in/krishnam-garg" target="_blank" class="view-but contact-btn">
+                    <i class="ri-linkedin-box-fill"></i> LinkedIn
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL (Place just above <footer>) -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn"><i class="ri-close-large-fill"></i></span>
+            <h2 id="modal-title">Project Title</h2>
+            <p id="modal-tech">Tech Stack</p>
+            <p id="modal-desc">Project description goes here...</p>
+        </div>
+    </div>
+        <footer>
+            Krishnam Garg
+        </footer>
+    </div>
+            <script src="script.js"></script>
+
+</body>
+</html>

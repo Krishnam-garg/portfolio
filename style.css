@@ -1,0 +1,482 @@
+/* =========================================
+   1. GLOBALS & RESET
+========================================= */
+body {
+    background-color: black;
+    font-family: 'Roboto', Helvetica, sans-serif;
+    color: #cccccc;
+    margin: 0;
+    padding: 0;
+    cursor: url('cursor.cur'), auto;
+    overflow-x: hidden;
+    /* Fixed: display:flex removed so absolute positioning works properly */
+    display: block; 
+}
+
+a {
+    color: #cccccc;
+    text-decoration: none;
+    cursor: url('cursor.cur'), auto;
+}
+
+i {
+    color: #cccccc;
+    font-size: 25px;
+}
+
+/* =========================================
+   2. MAIN LAYOUT & NAVIGATION
+========================================= */
+.sidepannel {
+    width: 100px;
+    height: 100vh;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #1A1A1A;
+    display: flex;
+    flex-direction: column;
+    border-right: solid 1px #333333;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.sidepannel:hover {
+    box-shadow: 0 0 30px #892be263;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+}
+
+.nav-tog {
+    position: absolute;
+    bottom: 20px;
+}
+
+.nav-buts {
+    height: 300px;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav-but {
+    height: 50px;
+    width: 80px;
+    padding: 5px;
+    margin: 5px;
+    color: #cccccc;
+    font-size: 15px;
+    display: flex;
+    font-weight: 500;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+.nav-but:hover {
+    text-shadow: 0 0 20px #8A2BE2, 0 0 25px #8A2BE2;
+}
+
+.nav-but:hover a, 
+.nav-but:hover i {
+    color: #8A2BE2;
+}
+
+.main {
+    position: absolute;
+    top: 0;
+    left: 100px;
+    width: calc(100% - 100px);
+    height: 100vh;
+    height: 100dvh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    margin: 0;
+}
+
+.page {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 80px 20px;
+    box-sizing: border-box;
+    scroll-snap-align: start;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.title {
+    color: #cccccc;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 40px;
+    margin: 50px;
+}
+
+/* =========================================
+   3. HOME SECTION
+========================================= */
+#home {
+    background-color: #0A0A0A;
+    padding: 0; /* Ensures perfect vertical centering */
+}
+
+.name {
+    color: white;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    animation: glow 1.5s infinite alternate;
+}
+
+.typewriter-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 30px;
+    color: #a5a5a5;
+    text-shadow: 0 0 5px #8A2BE2, 0 0 15px #8A2BE2;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    min-height: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid #8A2BE2;
+    animation: blink-caret 0.75s step-end infinite;
+}
+
+.view-but {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    color: #8A2BE2;
+    height: 30px;
+    width: auto;
+    padding: 10px;
+    border: solid 1.5px #8A2BE2;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: all 0.3s ease;
+}
+
+.view-but i {
+    color: #8A2BE2;
+    transition: all 0.3s ease;
+}
+
+.view-but:hover {
+    background-color: #8A2BE2;
+    color: #1A1A1A;
+    font-weight: 700;
+    box-shadow: 0 0 40px #8A2BE2;
+}
+
+.view-but:hover i {
+    color: #1A1A1A;
+}
+
+/* =========================================
+   4. ABOUT SECTION
+========================================= */
+#about {
+    background-color: #1A1A1A;
+}
+
+.about-text {
+    max-width: 800px;
+    text-align: center;
+    line-height: 1.8;
+    font-size: 18px;
+    color: #a5a5a5;
+    padding: 0 20px;
+}
+
+.about-text strong {
+    color: #cccccc;
+}
+
+.motto {
+    color: #8A2BE2;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 22px;
+    margin-top: 30px;
+    text-shadow: 0 0 10px rgba(138, 43, 226, 0.5);
+}
+
+.boxx {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    max-width: 800px;
+    margin-top: 40px;
+}
+
+.skilltile {
+    background-color: #1A1A1A;
+    border: 1.5px solid #333333;
+    border-radius: 8px;
+    color: #cccccc;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 15px;
+    height: 50px;
+    width: 150px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    transition: 0.3s;
+}
+
+.skilltile:hover {
+    border-color: #8A2BE2;
+    color: #8A2BE2;
+    box-shadow: 0 0 20px rgba(138, 43, 226, 0.6);
+    transform: translateY(-3px);
+}
+
+/* =========================================
+   5. WORK SECTION & GRID
+========================================= */
+#work {
+    background-color: #0A0A0A;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-auto-rows: 250px;
+    gap: 2.5rem;
+    width: 100%;
+    max-width: 1050px;
+    justify-items: center;
+    align-items: center;
+}
+
+.tile {
+    width: 100%;
+    max-width: 320px;
+    height: 250px;
+    background-color: #1A1A1A;
+    border: 1.5px solid #333333;
+    border-radius: 12px;
+    color: #cccccc;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 20px;
+    gap: 15px;
+}
+
+.tile h3 {
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    font-size: 22px;
+    color: #cccccc;
+    transition: 0.3s;
+}
+
+.tap-hint {
+    font-size: 14px;
+    color: #8A2BE2;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+
+.tap-hint i {
+    font-size: 16px;
+    color: #8A2BE2;
+    vertical-align: middle;
+}
+
+.tile:hover {
+    border: 1.5px solid #8A2BE2;
+    color: #8A2BE2;
+    box-shadow: 0 0 30px rgba(138, 43, 226, 0.4);
+    transform: translateY(-5px);
+}
+
+.tile:hover h3 {
+    color: #8A2BE2;
+}
+
+/* =========================================
+   6. CONTACT SECTION & FOOTER
+========================================= */
+#contact {
+    background-color: #1A1A1A;
+}
+
+.contact-container {
+    text-align: center;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 20px;
+}
+
+.contact-text {
+    font-size: 20px;
+    line-height: 1.6;
+    color: #a5a5a5;
+}
+
+.contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.contact-btn {
+    width: 140px;
+    border-radius: 8px;
+    font-size: 16px;
+    gap: 8px;
+}
+
+.contact-btn i {
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+.contact-btn:hover i {
+    color: #1A1A1A;
+}
+
+footer {
+    width: 100%;
+    background-color: #0A0A0A;
+    color: #cccccc;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 2px #333333;
+    scroll-snap-align: end;
+}
+
+/* =========================================
+   7. MODAL STYLES
+========================================= */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #0A0A0A;
+    border: 1.5px solid #8A2BE2;
+    border-radius: 12px;
+    padding: 40px;
+    width: 80%;
+    max-width: 550px;
+    position: relative;
+    box-shadow: 0 0 50px rgba(138, 43, 226, 0.3);
+    text-align: left;
+    animation: modalFadeIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #cccccc;
+    cursor: pointer;
+    font-size: 24px;
+    transition: 0.3s;
+}
+
+.close-btn:hover {
+    color: #8A2BE2;
+    text-shadow: 0 0 15px #8A2BE2;
+    transform: scale(1.1);
+}
+
+#modal-title {
+    font-family: 'Orbitron', sans-serif;
+    color: #8A2BE2;
+    font-size: 28px;
+    margin: 0 0 10px 0;
+    text-shadow: 0 0 15px rgba(138, 43, 226, 0.4);
+}
+
+#modal-tech {
+    color: #cccccc;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    margin-bottom: 25px;
+    border-bottom: 1px solid #333333;
+    padding-bottom: 15px;
+}
+
+#modal-desc {
+    line-height: 1.7;
+    font-size: 16px;
+    color: #a5a5a5;
+}
+#contact {
+    background-color: #0A0A0A;
+    /* Subtract the 60px footer height so they share the final screen perfectly */
+    min-height: calc(100vh - 60px);
+    min-height: calc(100dvh - 60px); 
+}
+
+footer {
+    width: 100%;
+    background-color: #1A1A1A;
+    color: #cccccc;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: solid 2px #333333;
+    /* Removed scroll-snap-align so it doesn't fight with the contact section */
+    scroll-snap-align: none; 
+}
+/* =========================================
+   8. KEYFRAMES
+========================================= */
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #8A2BE2, 0 0 20px #8A2BE2;
+    }
+    to {
+        text-shadow: 0 0 25px #8A2BE2, 0 0 30px #8A2BE2;
+    }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #8A2BE2; }
+}
+
+@keyframes modalFadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
